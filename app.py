@@ -2,10 +2,9 @@
 
 import datetime
 import os 
-
 def do_magic():
     now = datetime.datetime.now()
-    return "Hello {0}".format(now)
+    return "Hello my friend {0}".format(now)
 
 def application(env, start_response):
     start_response('200 OK', [('Content-Type','text/html')])
