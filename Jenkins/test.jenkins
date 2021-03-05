@@ -1,5 +1,11 @@
 pipeline {
     agent { docker { image 'python:3.5.1' } }
+   
+    options {
+	buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+	timestamps()
+	   }
+    
     stages {
         stage('build') {
             steps {
